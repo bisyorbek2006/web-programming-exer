@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classList — Styling with JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; }
+    a { color: #0b57d0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .box { background: #f3f6f1; border: 1px solid #d7e1da; padding: 1rem; margin-top: 1rem; border-radius: 10px; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 8px; overflow-x:auto; }
+  </style>
+</head>
+<body>
+  <h1>classList — Styling with JavaScript</h1>
+  <p><a href="../index.html">Back to Week 4</a></p>
+  <div class="box">
+    <p>This sample demonstrates the JavaScript DOM concept for classlist — styling with javascript.</p>
+    <style>
+  .demo-box { width: 180px; height: 110px; background: #f0fdfa; border: 2px solid #14b8a6; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+  .demo-box.highlighted { background: #99f6e4; color: #0f766e; }
+  .demo-box.dark { background: #1a2340; color: white; }
+</style>
+<div id="demo-box" class="demo-box">I am the demo box</div>
+<button onclick="document.getElementById('demo-box').classList.toggle('highlighted');" style="margin-top:12px;">Toggle highlighted</button>
+  </div>
+</body>
+</html>

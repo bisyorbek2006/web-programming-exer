@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>innerHTML — Power & Danger ⚠️</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; }
+    a { color: #0b57d0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .box { background: #f3f6f1; border: 1px solid #d7e1da; padding: 1rem; margin-top: 1rem; border-radius: 10px; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 8px; overflow-x:auto; }
+  </style>
+</head>
+<body>
+  <h1>innerHTML — Power & Danger ⚠️</h1>
+  <p><a href="../index.html">Back to Week 4</a></p>
+  <div class="box">
+    <p>This sample demonstrates the JavaScript DOM concept for innerhtml — power & danger ⚠️.</p>
+    <div style="padding:16px;border:1px solid #cbd5e1;border-radius:12px; max-width:420px;">
+  <button onclick="document.getElementById('box').innerHTML = '<strong>Bold</strong> and <em>italic</em>'">Use innerHTML</button>
+  <button onclick="document.getElementById('box').textContent = '<b>literal text</b>'" style="margin-left:8px;">Use textContent</button>
+  <div id="box" style="margin-top:12px;padding:12px;background:#f0fdfa; border-radius:8px;">Preview area</div>
+</div>
+  </div>
+</body>
+</html>

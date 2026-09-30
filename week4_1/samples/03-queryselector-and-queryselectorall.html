@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector & querySelectorAll</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; }
+    a { color: #0b57d0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .box { background: #f3f6f1; border: 1px solid #d7e1da; padding: 1rem; margin-top: 1rem; border-radius: 10px; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 8px; overflow-x:auto; }
+  </style>
+</head>
+<body>
+  <h1>querySelector & querySelectorAll</h1>
+  <p><a href="../index.html">Back to Week 4</a></p>
+  <div class="box">
+    <p>This sample demonstrates the JavaScript DOM concept for queryselector & queryselectorall.</p>
+    <style>.chip{padding:8px 12px;background:#ccfbf1;border-radius:999px;margin:4px;display:inline-block;}.chip.active{background:#0f766e;color:#fff;}</style>
+<div class="chip active">One</div>
+<div class="chip">Two</div>
+<div class="chip active">Three</div>
+<script>
+  const chips = document.querySelectorAll('.chip');
+  chips.forEach((chip) => chip.addEventListener('click', () => chip.classList.toggle('active')));
+</script>
+  </div>
+</body>
+</html>

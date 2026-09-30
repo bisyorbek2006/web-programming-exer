@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Event Object (e)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; }
+    a { color: #0b57d0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .box { background: #f3f6f1; border: 1px solid #d7e1da; padding: 1rem; margin-top: 1rem; border-radius: 10px; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 8px; overflow-x:auto; }
+  </style>
+</head>
+<body>
+  <h1>The Event Object (e)</h1>
+  <p><a href="../index.html">Back to Week 4</a></p>
+  <div class="box">
+    <p>This sample demonstrates the JavaScript DOM concept for the event object (e).</p>
+    <div style="display:flex; flex-direction:column; gap:8px; max-width:320px;">
+  <button id="evt-btn" style="padding:10px 16px; background:#0f766e; color:white; border:none; border-radius:8px;">Click me</button>
+  <p id="evt-log">Event log appears here</p>
+</div>
+<script>
+  document.getElementById('evt-btn').addEventListener('click', (e) => {
+    document.getElementById('evt-log').textContent = 'Event type: ' + e.type + ' | target: ' + e.target.id;
+  });
+</script>
+  </div>
+</body>
+</html>

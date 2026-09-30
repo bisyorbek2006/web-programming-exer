@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecting Elements</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; }
+    a { color: #0b57d0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .box { background: #f3f6f1; border: 1px solid #d7e1da; padding: 1rem; margin-top: 1rem; border-radius: 10px; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 8px; overflow-x:auto; }
+  </style>
+</head>
+<body>
+  <h1>Selecting Elements</h1>
+  <p><a href="../index.html">Back to Week 4</a></p>
+  <div class="box">
+    <p>This sample demonstrates the JavaScript DOM concept for selecting elements.</p>
+    <button id="demo02-text" style="padding:10px 18px; background:#0f766e; color:white; border:none; border-radius:8px; cursor:pointer;">Click to change me</button>
+<script>
+  const button = document.getElementById('demo02-text');
+  button.addEventListener('click', () => {
+    button.textContent = 'Selected by getElementById()';
+    button.style.background = '#14b8a6';
+  });
+</script>
+  </div>
+</body>
+</html>
