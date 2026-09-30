@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z-index & overflow</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 32px; }
+    .stack { position: relative; height: 200px; }
+    .layer { position: absolute; width: 180px; height: 100px; padding: 10px; border-radius: 8px; font-size: 14px; }
+    .layer-1 { background:#0f766e; color:white; top:20px; left:20px; z-index:1; }
+    .layer-2 { background:#14b8a6; color:white; top:50px; left:80px; z-index:2; }
+    .layer-3 { background:#ccfbf1; color:#0f766e; top:80px; left:140px; z-index:3; }
+    .overflow-demo { width: 220px; height: 90px; overflow: hidden; border: 2px solid #14b8a6; padding: 8px; margin-top: 16px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>z-index & overflow</h1>
+  <p><a href="../index.html">Back to Week 3</a></p>
+  <div class="stack">
+    <div class="layer layer-1">z-index: 1</div>
+    <div class="layer layer-2">z-index: 2</div>
+    <div class="layer layer-3">z-index: 3</div>
+  </div>
+  <div class="overflow-demo">
+    overflow: hidden clips everything outside the box. This text is too long to fit and will be cut off.
+  </div>
+</body>
+</html>

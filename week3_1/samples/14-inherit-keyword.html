@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inherit Keyword</title>
+  <style>
+    body { color: #0f766e; font-family: Georgia, serif; font-size: 18px; }
+    .parent { color: #f43f5e; font-size: 20px; }
+    .child-inherit { color: inherit; }
+    .child-initial { color: initial; }
+    .with-border { border: 3px solid currentColor; padding: 8px; }
+    .parent-bordered { border: 3px solid #0f766e; padding: 12px; }
+    .inherit-border { border: inherit; }
+    p { margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <h1>inherit Keyword</h1>
+  <p><a href="../index.html">Back to Week 3</a></p>
+  <div class="parent">
+    <p>Parent — color: red</p>
+    <p class="child-inherit">child color: inherit → red</p>
+    <p class="child-initial">child color: initial → black</p>
+  </div>
+  <div class="parent-bordered">
+    Parent has a border
+    <div class="inherit-border" style="margin-top:8px">border: inherit → same border</div>
+  </div>
+</body>
+</html>

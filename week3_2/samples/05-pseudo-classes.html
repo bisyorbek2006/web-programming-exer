@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo-classes</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 32px; }
+    .btn { background:#0f766e; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; transition:all .2s; }
+    .btn:hover { background:#14b8a6; transform:translateY(-2px); }
+    .btn:active { transform:scale(.97); }
+    input { border:2px solid #94a3b8; border-radius:6px; padding:8px 12px; outline:none; }
+    input:focus-visible { border-color:#0f766e; box-shadow:0 0 0 3px #99f6e4; }
+    table { border-collapse: collapse; width: 260px; margin-top:16px; }
+    td { padding:6px 12px; }
+    tr:nth-child(even) { background: #f0fdfa; }
+    tr:nth-child(odd) { background: #fff; }
+    tr:first-child { background: #0f766e; color: white; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Pseudo-classes</h1>
+  <p><a href="../index.html">Back to Week 3</a></p>
+  <button class="btn">Hover & Click Me</button><br><br>
+  <input type="text" placeholder="Tab here to see :focus-visible"><br>
+  <table>
+    <tr><td>Name</td><td>Score</td></tr>
+    <tr><td>Alice</td><td>98</td></tr>
+    <tr><td>Bob</td><td>85</td></tr>
+    <tr><td>Carol</td><td>91</td></tr>
+  </table>
+</body>
+</html>

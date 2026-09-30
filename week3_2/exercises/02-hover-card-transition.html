@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Card + Transition</title>
+  <style>
+    body { padding: 40px; background: #f0fdfa; font-family: Arial, sans-serif; }
+    .card {
+      background: white; border: 2px solid #14b8a6; border-radius: 12px; padding: 24px;
+      width: 240px; color: #0f766e; font-size: 16px; transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+  </style>
+</head>
+<body>
+  <h1>Hover Card + Transition</h1>
+  <p><a href="../index.html">Back to Week 3</a></p>
+  <div class="card">Hover over me!</div>
+</body>
+</html>

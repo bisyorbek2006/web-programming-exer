@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>My CSS Advanced Page</title>
+  <style>
+    :root {
+      --primary: #0f766e; --accent: #14b8a6; --bg: #f0fdfa; --card: #ffffff; --text: #1e293b; --radius: 12px;
+    }
+    @media (prefers-color-scheme: dark) { :root { --bg: #051a0a; --card: #0b2017; --text: #d4edda; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: var(--bg); color: var(--text); }
+    nav { position: fixed; top: 0; left: 0; right: 0; background: #111827; color: white; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; z-index: 10; }
+    nav a { color: white; text-decoration: none; margin-left: 16px; }
+    .hero { padding: 110px 24px 40px; text-align: center; background: linear-gradient(135deg, #ccfbf1, #f0fdfa); animation: fadeIn 0.8s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    .skills-section { padding: 24px; }
+    .sticky-h2 { position: sticky; top: 74px; background: rgba(255,255,255,0.8); padding: 12px 0; margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 640px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    .card { background: var(--card); border-radius: var(--radius); padding: 20px; border: 1px solid #dfe7f0; transition: transform 0.2s ease; }
+    .card:hover { transform: translateY(-5px); }
+    .card::before { content: attr(data-icon); display: block; font-size: 2rem; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <span>YOUR NAME</span>
+    <div><a href="#">Home</a> <a href="#">Skills</a></div>
+  </nav>
+  <section class="hero">
+    <h1>Hello, I am [Your Name]</h1>
+    <p>[Your major] · Gachon University · Week 3 CSS Advanced</p>
+  </section>
+  <section class="skills-section">
+    <h2 class="sticky-h2">My Skills</h2>
+    <div class="grid">
+      <div class="card" data-icon="🌐">HTML5</div>
+      <div class="card" data-icon="🎨">CSS3</div>
+      <div class="card" data-icon="⚡">JavaScript</div>
+    </div>
+  </section>
+</body>
+</html>
