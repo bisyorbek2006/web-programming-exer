@@ -4,73 +4,69 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <title>Week 9.1 | Accessibility Lab</title>
+  <meta name="theme-color" content="#090b11">
+  <title>Week 9 | Access for Everyone</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      background:
-        radial-gradient(ellipse at 12% 10%, rgba(125, 211, 252, 0.12), transparent 22rem),
-        radial-gradient(ellipse at 90% 30%, rgba(249, 185, 139, 0.12), transparent 18rem),
-        #0d1117;
-    }
-  </style>
 </head>
 <body>
-  <main class="lesson-page">
-    <a class="back" href="../index.html">Back to course</a>
-    <header class="lesson-heading">
-      <p class="eyebrow">Week 9.1</p>
-      <h1>Accessibility <span>lab.</span></h1>
-      <p>Build forms and interface controls that feel natural, usable, and clear for everyone.</p>
+  <main class="home">
+    <a class="back" href="../index.html">All weeks</a>
+
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> JSK0126002 · Web Programming · Week 9</p>
+        <h1>Good design<br>works for <span>everyone.</span></h1>
+        <p class="lede">Small accessibility choices make a big difference. Explore keyboard-ready controls, useful image descriptions, and forms that guide everyone through.</p>
+        <a class="hero-link" href="samples/sample02.html">Start exploring <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="art-sticker"><span>INCLUSIVE</span><strong>✳</strong></div>
+        <div class="art-label">A web with<br>room for all.</div>
+        <span class="art-star star-one">✳</span>
+        <span class="art-star star-two">✦</span>
+      </div>
     </header>
 
-    <section class="demo-card" aria-labelledby="labs-heading">
-      <p class="demo-kicker">Practice</p>
-      <h2 id="labs-heading">Three quick experiments</h2>
-      <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 20px;">
-        <article class="image-example">
-          <figure>
-            <div class="image-frame logo-frame">
-              <a href="labs/01-keyboard-access.html" style="display:grid;place-items:center;width:100%;height:100%;color:inherit;text-decoration:none;">
-                <div style="padding: 18px 20px; border:1px solid var(--line); border-radius:16px; background:rgba(125,211,252,0.06); text-align:center;">
-                  <strong style="display:block; font-size: 1.1rem; color: var(--ink);">Lab 01</strong>
-                  <span style="color: var(--muted);">Keyboard access</span>
-                </div>
-              </a>
-            </div>
-            <figcaption><strong>Keyboard-ready buttons</strong>Native controls, visible focus, and simple activation patterns.</figcaption>
-          </figure>
-        </article>
+    <section class="content-panel" aria-labelledby="week-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Three hands-on accessibility labs</p>
+          <h2 id="week-heading">Make every interaction count.</h2>
+        </div>
+        <span class="week-tag">WEEK 09 · 03 LABS</span>
+      </div>
 
-        <article class="image-example">
-          <figure>
-            <div class="image-frame wave-frame">
-              <a href="labs/02-image-descriptions.html" style="display:grid;place-items:center;width:100%;height:100%;color:inherit;text-decoration:none;">
-                <div style="padding: 18px 20px; border:1px solid var(--line); border-radius:16px; background:rgba(249,185,139,0.06); text-align:center;">
-                  <strong style="display:block; font-size: 1.1rem; color: var(--ink);">Lab 02</strong>
-                  <span style="color: var(--muted);">Image descriptions</span>
-                </div>
-              </a>
-            </div>
-            <figcaption><strong>Image descriptions</strong>Decide when to describe, hide, or name an image.</figcaption>
-          </figure>
-        </article>
-
-        <article class="image-example">
-          <figure>
-            <div class="image-frame chart-frame">
-              <a href="labs/03-accessible-signup.html" style="display:grid;place-items:center;width:100%;height:100%;color:inherit;text-decoration:none;">
-                <div style="padding: 18px 20px; border:1px solid var(--line); border-radius:16px; background:rgba(141,231,197,0.08); text-align:center;">
-                  <strong style="display:block; font-size: 1.1rem; color: var(--ink);">Lab 03</strong>
-                  <span style="color: var(--muted);">Accessible forms</span>
-                </div>
-              </a>
-            </div>
-            <figcaption><strong>Accessible signup</strong>Connect labels, guidance, and validation in one clean flow.</figcaption>
-          </figure>
-        </article>
+      <div class="lab-grid">
+        <a class="lab-card lab-card-lime" href="samples/sample02.html">
+          <span class="lab-card-top"><span class="lab-number">01</span><span class="lab-symbol" aria-hidden="true">↵</span></span>
+          <span class="lab-title">Buttons that work for everyone</span>
+          <span class="lab-description">Try real buttons, clear names, visible focus, and keyboard activation.</span>
+          <span class="lab-action">Explore keyboard access <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="lab-card lab-card-violet" href="samples/sample03.html">
+          <span class="lab-card-top"><span class="lab-number">02</span><span class="lab-symbol" aria-hidden="true">▧</span></span>
+          <span class="lab-title">Write better image descriptions</span>
+          <span class="lab-description">Choose useful alt text, mark decoration, and give charts a meaningful summary.</span>
+          <span class="lab-action">Explore image text <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="lab-card lab-card-blue" href="samples/sample04.html">
+          <span class="lab-card-top"><span class="lab-number">03</span><span class="lab-symbol" aria-hidden="true">✦</span></span>
+          <span class="lab-title">Build a friendlier signup</span>
+          <span class="lab-description">Connect labels, explain errors, and help people recover with confidence.</span>
+          <span class="lab-action">Explore accessible forms <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="lab-card lab-card-quiet" href="samples/sample01.html">
+          <span class="lab-card-top"><span class="lab-number">BONUS</span><span class="lab-symbol" aria-hidden="true">✓</span></span>
+          <span class="lab-title">Creative Coding Lab registration</span>
+          <span class="lab-description">A longer form-validation demo with live feedback and a confirmation step.</span>
+          <span class="lab-action">Open the bonus demo <span aria-hidden="true">→</span></span>
+        </a>
       </div>
     </section>
+
+    <p class="page-note"><span aria-hidden="true">✳</span> Try each lab with your keyboard: Tab to move, Enter or Space to activate.</p>
   </main>
 </body>
 </html>

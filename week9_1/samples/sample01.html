@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Creative Coding Lab Registration | Week 9</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main class="lesson-page">
+    <a class="back" href="../index.html">Back to Week 9.1</a>
+    <header class="lesson-heading">
+      <p class="eyebrow">Bonus · creative coding</p>
+      <h1>Register for the <span>lab.</span></h1>
+      <p>Share a few details so the workshop team can prepare a smooth, welcoming session.</p>
+    </header>
+
+    <section class="signup-layout" aria-label="Creative coding lab registration form">
+      <aside class="signup-aside">
+        <div>
+          <span class="signup-mark" aria-hidden="true">✦</span>
+          <h2>Ready to build something creative?</h2>
+        </div>
+        <p>We’ll send the workshop details and a reminder before the session begins.</p>
+      </aside>
+
+      <div class="signup-main">
+        <div class="signup-top">
+          <div>
+            <p class="eyebrow">Workshop signup</p>
+            <h2>Join the lab</h2>
+          </div>
+        </div>
+
+        <form id="bonusForm" novalidate>
+          <div class="signup-field">
+            <label for="bonusName">Full name</label>
+            <input type="text" id="bonusName" name="bonusName" placeholder="Your full name" autocomplete="name" required>
+            <p class="signup-hint" id="bonusNameHint">Tell us who you’ll be joining the session with.</p>
+            <p class="signup-error" id="bonusNameError" aria-live="polite"></p>
+          </div>
+
+          <div class="signup-field">
+            <label for="bonusEmail">Email address</label>
+            <input type="email" id="bonusEmail" name="bonusEmail" placeholder="you@example.com" autocomplete="email" required>
+            <p class="signup-hint" id="bonusEmailHint">We’ll send important updates here.</p>
+            <p class="signup-error" id="bonusEmailError" aria-live="polite"></p>
+          </div>
+
+          <button type="submit" class="signup-submit">Complete registration <span aria-hidden="true">→</span></button>
+          <p class="signup-result" id="bonusResult" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('bonusForm');
+    const nameInput = document.getElementById('bonusName');
+    const emailInput = document.getElementById('bonusEmail');
+    const result = document.getElementById('bonusResult');
+
+    const validateName = () => {
+      if (!nameInput.value.trim()) {
+        document.getElementById('bonusNameError').textContent = 'Please enter your full name.';
+        nameInput.setAttribute('aria-invalid', 'true');
+        return false;
+      }
+      document.getElementById('bonusNameError').textContent = '';
+      nameInput.setAttribute('aria-invalid', 'false');
+      return true;
+    };
+
+    const validateEmail = () => {
+      const value = emailInput.value.trim();
+      if (!value) {
+        document.getElementById('bonusEmailError').textContent = 'Please enter your email address.';
+        emailInput.setAttribute('aria-invalid', 'true');
+        return false;
+      }
+      if (!value.includes('@')) {
+        document.getElementById('bonusEmailError').textContent = 'Enter a valid email address.';
+        emailInput.setAttribute('aria-invalid', 'true');
+        return false;
+      }
+      document.getElementById('bonusEmailError').textContent = '';
+      emailInput.setAttribute('aria-invalid', 'false');
+      return true;
+    };
+
+    nameInput.addEventListener('blur', validateName);
+    emailInput.addEventListener('blur', validateEmail);
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const valid = validateName() && validateEmail();
+      if (!valid) {
+        result.textContent = 'Please fix the highlighted fields and try again.';
+        return;
+      }
+      result.textContent = `Thanks, ${nameInput.value.trim()} — your lab registration is ready.`;
+    });
+  </script>
+</body>
+</html>
