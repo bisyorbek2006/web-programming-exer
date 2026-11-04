@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Contact us | Form Studio</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background:
+        radial-gradient(ellipse at 12% 8%, rgb(255 184 146 / 18%), transparent 28rem),
+        radial-gradient(ellipse at 90% 30%, rgb(124 90 240 / 16%), transparent 24rem),
+        #fffaf5;
+    }
+    .contact-layout .form-aside {
+      background:
+        linear-gradient(160deg, rgb(255 196 168 / 25%), rgb(255 255 255 / 22%)),
+        linear-gradient(180deg, #fff6f0, #fffdfb);
+    }
+    .contact-layout .aside-dots span:nth-child(1) { background: #ff9e67; }
+    .contact-layout .aside-dots span:nth-child(2) { background: #7c5af0; }
+    .contact-layout .aside-dots span:nth-child(3) { background: #9ad2b0; }
+  </style>
+</head>
+<body>
+  <main class="form-page">
+    <a class="back" href="../index.html">Back to Week 8</a>
+    <section class="form-layout contact-layout" aria-label="Contact us">
+      <aside class="form-aside">
+        <div class="aside-content">
+          <p class="aside-kicker">We’re all ears</p>
+          <h2>Let’s make something happen.</h2>
+          <p class="aside-copy">Questions, ideas, or just saying hello? Send us a note and we’ll be glad you did.</p>
+        </div>
+        <div class="aside-bottom"><span class="aside-dots" aria-hidden="true"><span></span><span></span><span></span></span> Thoughtful conversations start here</div>
+      </aside>
+      <div class="form-main">
+        <p class="eyebrow-compact">Get in touch</p>
+        <h1>Send us a note.</h1>
+        <p class="form-intro">Fill in the details and leave the rest to us.</p>
+        <form id="contactForm">
+          <div class="field">
+            <label for="senderName">Your name</label>
+            <input type="text" id="senderName" name="name" autocomplete="name" required minlength="2" placeholder="How should we address you?">
+          </div>
+          <div class="field">
+            <label for="senderEmail">Email address</label>
+            <input type="email" id="senderEmail" name="email" autocomplete="email" required placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required minlength="3" placeholder="What’s on your mind?">
+          </div>
+          <div class="field">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" required minlength="10" rows="5" placeholder="Share a few details (at least 10 characters)..."></textarea>
+          </div>
+          <button class="submit-button" type="submit">Send message <span aria-hidden="true">→</span></button>
+          <p class="form-footnote">This is a demo form — nothing will be sent.</p>
+          <p id="contactMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.getElementById('senderName').value;
+      document.getElementById('contactMessage').textContent = `Thanks, ${name} — your demo message is ready.`;
+    });
+  </script>
+</body>
+</html>

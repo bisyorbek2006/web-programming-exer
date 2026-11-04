@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Exercise 2 | Form Studio</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .form-layout {
+      grid-template-columns: minmax(250px, 0.9fr) minmax(0, 1.2fr);
+    }
+    .form-aside {
+      background:
+        linear-gradient(140deg, rgba(244, 216, 201, .35), rgba(255,255,255,.78)),
+        var(--surface-soft);
+    }
+    .cta-box {
+      margin-top: 24px;
+      padding: 16px 18px;
+      border: 1px solid rgba(124, 90, 240, 0.15);
+      border-radius: 16px;
+      background: rgba(124, 90, 240, 0.05);
+      color: var(--muted);
+    }
+    .cta-box strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+  <main class="form-page">
+    <a class="back" href="../index.html">Back to Week 8</a>
+    <section class="form-layout" aria-label="Launch waitlist form exercise">
+      <aside class="form-aside">
+        <div class="aside-content">
+          <p class="aside-kicker">Exercise 2</p>
+          <h2>Join the early-access waitlist.</h2>
+          <p class="aside-copy">A bettter product launch form balances clarity, trust, and a simple path to action.</p>
+        </div>
+        <div class="cta-box">
+          <strong>Limited early access</strong>
+          Get product updates and first invitations to test the beta.
+        </div>
+      </aside>
+      <div class="form-main">
+        <p class="eyebrow-compact">Get started</p>
+        <h1>Request an invite</h1>
+        <p class="form-intro">Tell us a bit about yourself and we’ll be in touch soon.</p>
+        <form>
+          <div class="field">
+            <label for="waitlist-name">Your name</label>
+            <input id="waitlist-name" type="text" placeholder="Alex Morgan" required>
+          </div>
+          <div class="field">
+            <label for="waitlist-work">Work email</label>
+            <input id="waitlist-work" type="email" placeholder="alex@company.com" required>
+          </div>
+          <div class="field">
+            <label for="waitlist-role">Role</label>
+            <input id="waitlist-role" type="text" placeholder="Product designer">
+          </div>
+          <div class="form-options">
+            <label class="check-option" for="waitlist-news"><input id="waitlist-news" type="checkbox"> I’d like updates about launches and beta access</label>
+          </div>
+          <button class="submit-button" type="submit">Request access <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Exercise 1 | Form Studio</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background:
+        radial-gradient(ellipse at 15% 10%, rgb(180 147 253 / 15%), transparent 28rem),
+        radial-gradient(ellipse at 90% 26%, rgb(255 206 171 / 28%), transparent 26rem),
+        #f8f4fe;
+    }
+    .form-layout { grid-template-columns: 1fr; }
+    .form-aside {
+      padding-bottom: 18px;
+      background: linear-gradient(135deg, rgba(124, 90, 240, 0.16), rgba(255, 255, 255, 0.8));
+    }
+    .form-main {
+      padding-top: 18px;
+    }
+    .challenge-card {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px dashed #d9d0f1;
+      border-radius: 14px;
+      background: #f7f2ff;
+      color: #4a3a7a;
+      font-size: .9rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="form-page">
+    <a class="back" href="../index.html">Back to Week 8</a>
+    <section class="form-layout" aria-label="Exercise: redesign sign in form">
+      <aside class="form-aside">
+        <div class="aside-content">
+          <p class="aside-kicker">Exercise 1</p>
+          <h2>Design a calmer login.</h2>
+          <p class="aside-copy">Try creating your own palette, stronger hierarchy, and softer edges while keeping the layout friendly and clear.</p>
+        </div>
+        <div class="challenge-card">Challenge: make this screen feel lighter, more premium, and easier to scan.</div>
+      </aside>
+      <div class="form-main">
+        <p class="eyebrow-compact">Welcome back</p>
+        <h1>Sign in</h1>
+        <p class="form-intro">Use this template as a starting point for your redesign.</p>
+        <form>
+          <div class="field">
+            <label for="exercise-email">Email address</label>
+            <input id="exercise-email" type="email" placeholder="name@example.com" required>
+          </div>
+          <div class="field">
+            <label for="exercise-password">Password</label>
+            <input id="exercise-password" type="password" placeholder="Enter your password" required>
+          </div>
+          <div class="form-options">
+            <label class="check-option" for="exercise-remember"><input id="exercise-remember" type="checkbox"> Keep me signed in</label>
+          </div>
+          <button class="submit-button" type="submit">Continue <span aria-hidden="true">→</span></button>
+          <p class="form-footnote">Need an account? <a href="../samples/sample02.html">Create one</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
