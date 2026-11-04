@@ -1,0 +1,19 @@
+<svg width="800" height="360" viewBox="0 0 800 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="360" fill="#0E1728"/>
+  <path d="M90 270H710" stroke="#94A3B8" stroke-width="3" stroke-dasharray="8 12"/>
+  <path d="M90 210H710" stroke="#94A3B8" stroke-width="2" stroke-dasharray="8 12" opacity="0.7"/>
+  <path d="M90 150H710" stroke="#94A3B8" stroke-width="2" stroke-dasharray="8 12" opacity="0.6"/>
+  <path d="M140 250L240 200L320 170L420 160L520 140L620 120L720 110" stroke="#7DD3FC" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="140" cy="250" r="9" fill="#7DD3FC"/>
+  <circle cx="240" cy="200" r="9" fill="#7DD3FC"/>
+  <circle cx="320" cy="170" r="9" fill="#7DD3FC"/>
+  <circle cx="420" cy="160" r="9" fill="#7DD3FC"/>
+  <circle cx="520" cy="140" r="9" fill="#7DD3FC"/>
+  <circle cx="620" cy="120" r="9" fill="#7DD3FC"/>
+  <circle cx="720" cy="110" r="9" fill="#7DD3FC"/>
+  <g fill="#DCEAFF">
+    <text x="135" y="320" font-size="22" font-family="Arial, sans-serif">2024</text>
+    <text x="240" y="320" font-size="22" font-family="Arial, sans-serif">2025</text>
+    <text x="330" y="320" font-size="22" font-family="Arial, sans-serif">2026</text>
+  </g>
+</svg>

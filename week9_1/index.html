@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Week 9.1 | Accessibility Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background:
+        radial-gradient(ellipse at 12% 10%, rgba(125, 211, 252, 0.12), transparent 22rem),
+        radial-gradient(ellipse at 90% 30%, rgba(249, 185, 139, 0.12), transparent 18rem),
+        #0d1117;
+    }
+  </style>
+</head>
+<body>
+  <main class="lesson-page">
+    <a class="back" href="../index.html">Back to course</a>
+    <header class="lesson-heading">
+      <p class="eyebrow">Week 9.1</p>
+      <h1>Accessibility <span>lab.</span></h1>
+      <p>Build forms and interface controls that feel natural, usable, and clear for everyone.</p>
+    </header>
+
+    <section class="demo-card" aria-labelledby="labs-heading">
+      <p class="demo-kicker">Practice</p>
+      <h2 id="labs-heading">Three quick experiments</h2>
+      <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 20px;">
+        <article class="image-example">
+          <figure>
+            <div class="image-frame logo-frame">
+              <a href="labs/01-keyboard-access.html" style="display:grid;place-items:center;width:100%;height:100%;color:inherit;text-decoration:none;">
+                <div style="padding: 18px 20px; border:1px solid var(--line); border-radius:16px; background:rgba(125,211,252,0.06); text-align:center;">
+                  <strong style="display:block; font-size: 1.1rem; color: var(--ink);">Lab 01</strong>
+                  <span style="color: var(--muted);">Keyboard access</span>
+                </div>
+              </a>
+            </div>
+            <figcaption><strong>Keyboard-ready buttons</strong>Native controls, visible focus, and simple activation patterns.</figcaption>
+          </figure>
+        </article>
+
+        <article class="image-example">
+          <figure>
+            <div class="image-frame wave-frame">
+              <a href="labs/02-image-descriptions.html" style="display:grid;place-items:center;width:100%;height:100%;color:inherit;text-decoration:none;">
+                <div style="padding: 18px 20px; border:1px solid var(--line); border-radius:16px; background:rgba(249,185,139,0.06); text-align:center;">
+                  <strong style="display:block; font-size: 1.1rem; color: var(--ink);">Lab 02</strong>
+                  <span style="color: var(--muted);">Image descriptions</span>
+                </div>
+              </a>
+            </div>
+            <figcaption><strong>Image descriptions</strong>Decide when to describe, hide, or name an image.</figcaption>
+          </figure>
+        </article>
+
+        <article class="image-example">
+          <figure>
+            <div class="image-frame chart-frame">
+              <a href="labs/03-accessible-signup.html" style="display:grid;place-items:center;width:100%;height:100%;color:inherit;text-decoration:none;">
+                <div style="padding: 18px 20px; border:1px solid var(--line); border-radius:16px; background:rgba(141,231,197,0.08); text-align:center;">
+                  <strong style="display:block; font-size: 1.1rem; color: var(--ink);">Lab 03</strong>
+                  <span style="color: var(--muted);">Accessible forms</span>
+                </div>
+              </a>
+            </div>
+            <figcaption><strong>Accessible signup</strong>Connect labels, guidance, and validation in one clean flow.</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
