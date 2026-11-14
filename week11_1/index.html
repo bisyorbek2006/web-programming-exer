@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Week 11.1 React assignment: compose reusable profile cards from components and props.">
+  <title>Week 11.1 | React Components</title>
+  <link rel="stylesheet" href="../week-course.css">
+</head>
+<body>
+  <main class="assignment-shell">
+    <nav class="assignment-topbar" aria-label="Course navigation">
+      <a class="assignment-brand" href="../index.html">WEB PROGRAMMING</a>
+      <a class="assignment-back" href="../index.html">← All weeks</a>
+    </nav>
+    <header class="assignment-hero">
+      <div>
+        <p class="assignment-eyebrow">Week 11 · Part 01 · React</p>
+        <h1>Build once. <em>Compose freely.</em></h1>
+        <p class="assignment-lede">Turn repeated markup into reusable React components. Pass student information through props, render a directory from data, and keep each component focused on one job.</p>
+      </div>
+      <aside class="assignment-index" aria-label="Assignment focus">
+        <strong>11.1</strong>
+        <span>Components & composition</span>
+      </aside>
+    </header>
+    <section class="assignment-panel" aria-labelledby="homework-title">
+      <p class="assignment-eyebrow">Homework 1 · Student profile card</p>
+      <h2 id="homework-title">A directory powered by props</h2>
+      <p>Create a Vite + React app with a reusable <code>StudentProfileCard</code> that accepts a name, student ID, major, year, and GPA. Render several profiles from data rather than duplicating the markup.</p>
+      <pre class="assignment-code"><code>function StudentProfileCard({ name, studentId, major, year, gpa }) {
+  return (
+    &lt;article className="profile-card"&gt;
+      &lt;p&gt;{studentId}&lt;/p&gt;
+      &lt;h2&gt;{name}&lt;/h2&gt;
+      &lt;p&gt;{major} · Year {year}&lt;/p&gt;
+      &lt;p&gt;GPA {gpa}&lt;/p&gt;
+    &lt;/article&gt;
+  );
+}</code></pre>
+      <div class="assignment-callout">
+        <p><strong>Build goal:</strong> keep the card presentational, provide its data as props, and map a student array using a stable unique <code>key</code>.</p>
+      </div>
+    </section>
+    <section class="assignment-panel" aria-labelledby="skills-title">
+      <p class="assignment-eyebrow">Lecture topics</p>
+      <h2 id="skills-title">The component toolkit</h2>
+      <div class="assignment-grid">
+        <article class="assignment-card">
+          <span class="card-index">01 · JSX</span>
+          <h3>Describe the UI</h3>
+          <p>Write JSX with one returned tree, JavaScript expressions in braces, and fragments when a wrapper is not needed.</p>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">02 · Props</span>
+          <h3>Pass read-only data</h3>
+          <p>Destructure props, use sensible defaults, and pass nested content through <code>children</code>.</p>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">03 · Composition</span>
+          <h3>Combine small pieces</h3>
+          <p>Build larger interfaces from single-purpose components and render data collections with stable keys.</p>
+        </article>
+      </div>
+    </section>
+    <section class="assignment-panel" aria-labelledby="reference-title">
+      <p class="assignment-eyebrow">Reference work</p>
+      <h2 id="reference-title">Explore the published examples</h2>
+      <div class="assignment-grid">
+        <article class="assignment-card">
+          <span class="card-index">Homework 1</span>
+          <h3>Student profile cards</h3>
+          <p>See a profile-card directory built from reusable React components.</p>
+          <a href="https://kahlen2008.github.io/studentprofilecard/" target="_blank" rel="noopener noreferrer">Open the live app ↗</a>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">Homework 2</span>
+          <h3>Portfolio project gallery</h3>
+          <p>Explore composed project cards and interactive technology filtering.</p>
+          <a href="https://kahlen2008.github.io/kahlensdigitalportfolio/" target="_blank" rel="noopener noreferrer">Open the portfolio ↗</a>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">Practice</span>
+          <h3>Build the basics</h3>
+          <p>Try a profile card, a conditional notification list, and a reusable card with children.</p>
+          <a href="https://kahlen2008.github.io/webprogramming/week%2011/week%2011_1/" target="_blank" rel="noopener noreferrer">Open the assignment brief ↗</a>
+        </article>
+      </div>
+    </section>
+    <p class="assignment-footer">Week 11.1 · React components, props, lists, and composition</p>
+  </main>
+</body>
+</html>

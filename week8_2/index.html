@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An accessible student registration form with JavaScript validation.">
+  <title>Week 8.2 | Registration, Reimagined</title>
+  <link rel="stylesheet" href="../week-course.css">
+</head>
+<body>
+  <main class="assignment-shell">
+    <nav class="assignment-topbar" aria-label="Course navigation">
+      <a class="assignment-brand" href="../index.html">WEB PROGRAMMING</a>
+      <a class="assignment-back" href="../index.html">← All weeks</a>
+    </nav>
+
+    <header class="assignment-hero">
+      <div>
+        <p class="assignment-eyebrow">Week 08 · Part 02 · Form validation</p>
+        <h1>Registration, <em>reimagined.</em></h1>
+        <p class="assignment-lede">A helpful sign-up experience should catch mistakes early, explain what to do next, and never send a student’s information somewhere unexpected.</p>
+      </div>
+      <aside class="assignment-index" aria-label="Assignment focus">
+        <strong>08.2</strong>
+        <span>JavaScript validation lab</span>
+      </aside>
+    </header>
+
+    <section class="assignment-panel" aria-labelledby="registration-title">
+      <p class="assignment-eyebrow">Student registration</p>
+      <h2 id="registration-title">Create your course profile</h2>
+      <p>All fields stay in this browser. Try a mismatched password or an invalid phone number to see the validation feedback.</p>
+
+      <form class="assignment-form" id="registration-form" novalidate>
+        <div class="assignment-field">
+          <label for="student-name">Full name</label>
+          <input id="student-name" name="name" autocomplete="name" required minlength="2" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]{1,59}">
+          <span class="assignment-help">Use letters, spaces, apostrophes, or hyphens.</span>
+        </div>
+        <div class="assignment-field">
+          <label for="student-email">Email address</label>
+          <input id="student-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="assignment-field">
+          <label for="student-phone">Phone number</label>
+          <input id="student-phone" name="phone" type="tel" autocomplete="tel" required pattern="[+]?[0-9 ()-]{7,20}">
+          <span class="assignment-help">Use 7–20 digits, spaces, parentheses, or hyphens.</span>
+        </div>
+        <div class="assignment-field">
+          <label for="student-program">Program</label>
+          <select id="student-program" name="program" required>
+            <option value="">Choose your program</option>
+            <option>Web Programming</option>
+            <option>Computer Science</option>
+            <option>Information Systems</option>
+          </select>
+        </div>
+        <div class="assignment-field">
+          <label for="student-password">Password</label>
+          <input id="student-password" name="password" type="password" autocomplete="new-password" required minlength="8">
+          <span class="assignment-help">At least 8 characters.</span>
+        </div>
+        <div class="assignment-field">
+          <label for="student-confirm">Confirm password</label>
+          <input id="student-confirm" name="confirm" type="password" autocomplete="new-password" required minlength="8">
+        </div>
+        <p class="assignment-status assignment-field-wide" id="form-status" role="status" aria-live="polite">Complete all fields to enable registration.</p>
+        <button class="assignment-submit" id="register-button" type="submit" disabled>Complete registration</button>
+      </form>
+    </section>
+
+    <section class="assignment-panel" aria-labelledby="approach-title">
+      <p class="assignment-eyebrow">What this demonstrates</p>
+      <h2 id="approach-title">Validation with a human tone</h2>
+      <div class="assignment-grid">
+        <article class="assignment-card">
+          <span class="card-index">01 · Native checks</span>
+          <h3>Use the platform</h3>
+          <p>Required fields, email type, minimum length, and patterns provide a first layer of validation.</p>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">02 · Custom rules</span>
+          <h3>Match passwords</h3>
+          <p><code>setCustomValidity()</code> connects the confirmation field to the password field.</p>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">03 · Clear feedback</span>
+          <h3>Keep people informed</h3>
+          <p>A live status message explains readiness, and browser validation describes fields that need attention.</p>
+        </article>
+      </div>
+    </section>
+    <p class="assignment-footer">Demo only — the form does not submit or store personal information.</p>
+  </main>
+
+  <script>
+    const form = document.querySelector("#registration-form");
+    const password = document.querySelector("#student-password");
+    const confirmPassword = document.querySelector("#student-confirm");
+    const button = document.querySelector("#register-button");
+    const status = document.querySelector("#form-status");
+    const requiredFields = [...form.querySelectorAll("[required]")];
+
+    function updateFormState() {
+      confirmPassword.setCustomValidity(
+        confirmPassword.value && confirmPassword.value !== password.value
+          ? "Passwords must match."
+          : ""
+      );
+
+      const hasAllValues = requiredFields.every((field) => field.value.trim());
+      button.disabled = !hasAllValues;
+      status.textContent = hasAllValues
+        ? "Ready to check your details."
+        : "Complete all fields to enable registration.";
+      status.dataset.state = "";
+    }
+
+    form.addEventListener("input", updateFormState);
+    form.addEventListener("change", updateFormState);
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      updateFormState();
+
+      if (!form.reportValidity()) {
+        status.textContent = "Please correct the highlighted fields and try again.";
+        return;
+      }
+
+      status.textContent = "Registration complete. Your details stayed in this browser.";
+      status.dataset.state = "success";
+      form.reset();
+      button.disabled = true;
+    });
+  </script>
+</body>
+</html>
