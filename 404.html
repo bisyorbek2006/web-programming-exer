@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The requested coursework page could not be found.">
+  <title>Page not found | Web Programming</title>
+  <link rel="stylesheet" href="week-course.css">
+</head>
+<body>
+  <main class="assignment-shell">
+    <nav class="assignment-topbar" aria-label="Course navigation">
+      <a class="assignment-brand" href="index.html">WEB PROGRAMMING</a>
+      <a class="assignment-back" href="index.html">← All weeks</a>
+    </nav>
+    <section class="assignment-panel" aria-labelledby="not-found-title">
+      <p class="assignment-eyebrow">404 · Page not found</p>
+      <h1 id="not-found-title">That page took a wrong turn.</h1>
+      <p class="assignment-lede">The address <code id="missing-path">you requested</code> does not match a page in this coursework site. Try a week below or return to the course index.</p>
+      <div class="assignment-grid">
+        <article class="assignment-card">
+          <span class="card-index">Continue learning</span>
+          <h2>Course index</h2>
+          <p>Browse all available weekly lessons and exercises.</p>
+          <a href="index.html">Back to all weeks →</a>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">Week 9</span>
+          <h2>Accessibility lab</h2>
+          <p>Explore keyboard, image-description, and form-accessibility labs.</p>
+          <a href="week9_1/index.html">Open Week 9.1 →</a>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">Week 10</span>
+          <h2>Deployment lab</h2>
+          <p>Review deployment and recovery checks.</p>
+          <a href="week10_2/index.html">Open Week 10.2 →</a>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelector("#missing-path").textContent = window.location.pathname;
+  </script>
+</body>
+</html>

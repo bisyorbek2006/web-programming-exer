@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Week 9.1 accessibility audit findings and semantic HTML and ARIA remediations.">
+  <title>Accessibility audit | Week 9.1</title>
+  <link rel="stylesheet" href="../week-course.css">
+</head>
+<body>
+  <main class="assignment-shell">
+    <nav class="assignment-topbar" aria-label="Course navigation">
+      <a class="assignment-brand" href="../index.html">WEB PROGRAMMING</a>
+      <a class="assignment-back" href="index.html">← Week 9.1</a>
+    </nav>
+    <header class="assignment-hero">
+      <div>
+        <p class="assignment-eyebrow">Week 09 · Homework 01 · Accessibility</p>
+        <h1>Audit the page. <em>Improve the experience.</em></h1>
+        <p class="assignment-lede">An accessibility review of the Week 9.1 learning pages, focused on landmarks, heading hierarchy, and meaningful announcements for people using assistive technology.</p>
+      </div>
+      <aside class="assignment-index" aria-label="Audit focus">
+        <strong>04</strong>
+        <span>semantic and ARIA remediations</span>
+      </aside>
+    </header>
+    <section class="assignment-panel" aria-labelledby="method-title">
+      <p class="assignment-eyebrow">Audit method</p>
+      <h2 id="method-title">Inspect structure, then verify the fix</h2>
+      <p>The audit combines a Lighthouse accessibility pass with a manual review of document landmarks, heading order, control names, and feedback behavior. Automated results are a starting point; keyboard and screen-reader context still require human checks.</p>
+      <div class="assignment-callout">
+        <p><strong>Scope:</strong> Week 9.1 sample pages and the shared learning-page structure. The report records four representative semantic and ARIA improvements; it does not claim that a single automated score covers every accessibility need.</p>
+      </div>
+    </section>
+    <section class="assignment-panel" aria-labelledby="findings-title">
+      <p class="assignment-eyebrow">Findings & remediations</p>
+      <h2 id="findings-title">Four changes that add useful context</h2>
+      <div class="assignment-grid">
+        <article class="assignment-card">
+          <span class="card-index">01 · Landmarks</span>
+          <h3>Give page regions meaning</h3>
+          <p>Use a single main landmark, semantic header and navigation regions, and a footer for supporting information so assistive-technology users can move by page region.</p>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">02 · Headings</span>
+          <h3>Make the outline predictable</h3>
+          <p>Keep one descriptive level-one heading, then organize sections under level-two headings and related content under level three.</p>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">03 · Controls</span>
+          <h3>Name interactive elements</h3>
+          <p>Prefer native buttons and explicitly associated labels. Give icon-only controls an accessible name instead of relying on their visual symbol.</p>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">04 · Feedback</span>
+          <h3>Announce form status</h3>
+          <p>Associate instructions and error text with fields, and use a polite live region for status updates that appear after interaction.</p>
+        </article>
+      </div>
+    </section>
+    <section class="assignment-panel" aria-labelledby="verification-title">
+      <p class="assignment-eyebrow">Verification checklist</p>
+      <h2 id="verification-title">Check more than the score</h2>
+      <ul class="assignment-list">
+        <li>Navigate the page using only Tab, Shift+Tab, Enter, and Space; confirm focus remains visible.</li>
+        <li>Inspect the heading outline and landmark list with browser accessibility tools.</li>
+        <li>Confirm every form field has a programmatic label and that errors can be located with the field.</li>
+        <li>Re-run Lighthouse after remediation and document findings without treating the score as a complete audit.</li>
+      </ul>
+    </section>
+    <p class="assignment-footer">Week 9.1 · Accessibility audit and remediation</p>
+  </main>
+</body>
+</html>

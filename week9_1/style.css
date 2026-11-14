@@ -820,6 +820,31 @@ code {
   font-size: 0.9rem;
 }
 
+.homework-copy {
+  max-width: 70ch;
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+.homework-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 15px;
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  border-radius: 12px;
+  background: rgba(125, 211, 252, 0.08);
+  color: var(--ink);
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.homework-link:hover,
+.homework-link:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 @media (max-width: 760px) {
   .home {
     padding-top: 30px;
