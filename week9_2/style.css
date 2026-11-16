@@ -184,6 +184,13 @@ a { color: inherit; }
 .performance-promo a:hover,
 .performance-promo a:focus-visible { background: var(--accent-strong); }
 
+.performance-promo-links {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -815,6 +822,11 @@ a { color: inherit; }
   .method-card,
   .footer,
   .performance-promo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .performance-promo-links {
     flex-direction: column;
     align-items: flex-start;
   }

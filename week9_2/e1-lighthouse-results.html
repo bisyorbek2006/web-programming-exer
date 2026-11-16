@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f4f1e9">
+  <meta name="description" content="Week 9.2 exercise: understand Lighthouse performance findings and explore example image and script optimizations.">
+  <title>Read a Lighthouse report | Week 9.2</title>
+  <link rel="stylesheet" href="e1-lighthouse-results.css">
+  <script src="e1-lighthouse-results.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to exercise</a>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Week 9.2</a>
+      <a class="course-link" href="../index.html">WEB PROGRAMMING <span aria-hidden="true">/</span> COURSEWORK</a>
+      <span class="exercise-tag">EXERCISE 01 <span aria-hidden="true">·</span> PERFORMANCE</span>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">MEASURE <span aria-hidden="true">/</span> REASON <span aria-hidden="true">/</span> RETEST</p>
+          <h1 id="page-title">Read the report.<br><em>Find the cause.</em></h1>
+          <p class="hero-intro">Explore how script timing and image dimensions can affect a page, then learn what a Lighthouse report can—and cannot—tell you.</p>
+          <a class="hero-cta" href="#lab">Explore the example <span aria-hidden="true">↓</span></a>
+        </div>
+        <aside class="hero-note" aria-label="Exercise overview">
+          <span class="note-index">E1</span>
+          <p class="note-label">THE QUESTION</p>
+          <p class="note-question">What is slowing the first view—and how would you verify a fix?</p>
+          <span class="note-rule"></span>
+          <p class="note-caption">A guided simulation, not a live audit</p>
+        </aside>
+        <span class="hero-number" aria-hidden="true">09.2</span>
+      </section>
+
+      <section class="principles" aria-labelledby="principles-title">
+        <div class="section-intro">
+          <p class="eyebrow">THREE PRACTICAL CHECKS</p>
+          <h2 id="principles-title">Start with the cause, not the score.</h2>
+        </div>
+        <div class="principle-grid">
+          <article class="principle">
+            <span class="principle-index">01</span>
+            <h3>Let parsing continue</h3>
+            <p>A classic external script with <code>defer</code> downloads in parallel and runs after HTML parsing. It does not remove render-blocking CSS.</p>
+          </article>
+          <article class="principle">
+            <span class="principle-index">02</span>
+            <h3>Reserve image space</h3>
+            <p>Set image <code>width</code> and <code>height</code> so the browser can calculate its aspect ratio before the file arrives, reducing layout shifts.</p>
+          </article>
+          <article class="principle">
+            <span class="principle-index">03</span>
+            <h3>Load images at the right time</h3>
+            <p>Lazy-load below-the-fold images. Keep a likely Largest Contentful Paint image eager; consider high priority only when measurements support it.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lab-section" id="lab" aria-labelledby="lab-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">INTERACTIVE EXAMPLE</p>
+            <h2 id="lab-title">Compare two page setups.</h2>
+          </div>
+          <p class="section-aside">Illustrative values only <span aria-hidden="true">·</span> not measured by Lighthouse</p>
+        </div>
+
+        <div class="lab-grid">
+          <section class="code-card" aria-labelledby="code-title">
+            <div class="card-heading">
+              <span class="card-kicker">IMPLEMENTATION</span>
+              <span class="file-label">HTML</span>
+            </div>
+            <h3 id="code-title">A more careful starting point</h3>
+            <p>These patterns are useful hypotheses to test—not a guarantee of a particular score.</p>
+            <pre><code>&lt;!-- Classic external script: run after parsing --&gt;
+&lt;script src="/assets/app.js" defer&gt;&lt;/script&gt;
+
+&lt;!-- Likely first-view image: reserve space; don't lazy-load --&gt;
+&lt;img src="/images/hero.avif"
+     alt="A hiker looking across a mountain valley"
+     width="1200" height="800"
+     fetchpriority="high"&gt;
+
+&lt;!-- Below-the-fold image: reserve space and lazy-load --&gt;
+&lt;img src="/images/details.avif"
+     alt="Close-up of a trail map"
+     width="1200" height="800"
+     loading="lazy"&gt;</code></pre>
+            <div class="code-note">
+              <span aria-hidden="true">i</span>
+              <p>Use an accurate text alternative for meaningful images. If an image is decorative, use <code>alt=""</code>. Confirm the actual LCP element before changing its priority.</p>
+            </div>
+          </section>
+
+          <section class="simulator-card" aria-labelledby="simulator-title">
+            <div class="card-heading">
+              <span class="card-kicker">REPORT WALKTHROUGH</span>
+              <span class="sample-label">SAMPLE DATA</span>
+            </div>
+            <h3 id="simulator-title">Switch the example state</h3>
+            <p class="simulator-intro">The controls update a teaching example. They do not run Lighthouse or measure this page.</p>
+
+            <div class="mode-switch" role="group" aria-label="Choose an example page setup">
+              <button type="button" class="mode-button" data-mode="improved" aria-pressed="true">Improved example</button>
+              <button type="button" class="mode-button" data-mode="baseline" aria-pressed="false">Baseline example</button>
+            </div>
+
+            <dl class="metric-grid" aria-label="Illustrative performance values">
+              <div class="metric metric-score">
+                <dt>PERFORMANCE SCORE</dt>
+                <dd id="metric-score">--</dd>
+                <dd class="metric-note" id="metric-score-note">Example only</dd>
+              </div>
+              <div class="metric">
+                <dt>FCP</dt>
+                <dd id="metric-fcp">--</dd>
+                <dd class="metric-note">First Contentful Paint</dd>
+              </div>
+              <div class="metric">
+                <dt>LCP</dt>
+                <dd id="metric-lcp">--</dd>
+                <dd class="metric-note">Largest Contentful Paint</dd>
+              </div>
+              <div class="metric">
+                <dt>CLS</dt>
+                <dd id="metric-cls">--</dd>
+                <dd class="metric-note">Cumulative Layout Shift</dd>
+              </div>
+            </dl>
+
+            <div class="preview" role="group" aria-label="Illustration of the example page" aria-describedby="preview-copy">
+              <div class="preview-bar" aria-hidden="true"><span></span><span></span><span></span><b>example page</b></div>
+              <div class="preview-content">
+                <div class="preview-art" aria-hidden="true"><span>FIELD<br>NOTES</span></div>
+                <div>
+                  <p class="preview-status" id="preview-status">IMPROVED EXAMPLE</p>
+                  <h4>Performance test page</h4>
+                  <p id="preview-copy">Image space is reserved and the secondary image loads only when needed.</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="status-log" id="status-log" role="status" aria-live="polite">Example state: improved setup. Values are illustrative, not a Lighthouse run.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="reading-guide" aria-labelledby="guide-title">
+        <div>
+          <p class="eyebrow">READING THE METRICS</p>
+          <h2 id="guide-title">A score is a clue, not the whole story.</h2>
+          <p>Lighthouse scores are lab results and can vary between runs. Check the opportunity details, test under comparable conditions, and consider real-user data as well.</p>
+        </div>
+        <dl class="thresholds">
+          <div><dt>LCP</dt><dd>Good: 2.5 seconds or less</dd></div>
+          <div><dt>CLS</dt><dd>Good: 0.1 or less</dd></div>
+          <div><dt>FCP</dt><dd>Useful lab metric; not a Core Web Vital</dd></div>
+          <div><dt>INP</dt><dd>Core Web Vital; review responsiveness too</dd></div>
+        </dl>
+      </section>
+
+      <section class="checklist" aria-labelledby="checklist-title">
+        <p class="eyebrow">YOUR NEXT AUDIT</p>
+        <h2 id="checklist-title">Make the comparison fair.</h2>
+        <ol>
+          <li>Run Lighthouse on the same deployed page before and after a focused change.</li>
+          <li>Record device mode, URL, browser, run conditions, score, and key metrics.</li>
+          <li>Inspect the reported opportunity; make one change, then run the audit again.</li>
+          <li>Keep the actual report with your notes. Never substitute this simulator's sample values for measured results.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="index.html"><span aria-hidden="true">←</span> Back to Week 9.2</a>
+      <span>WEEK 09.2 <span aria-hidden="true">·</span> LIGHTHOUSE EXERCISE</span>
+      <a href="hw-lighthouse-performance.html">Performance report <span aria-hidden="true">→</span></a>
+    </footer>
+  </div>
+</body>
+</html>
