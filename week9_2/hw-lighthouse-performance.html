@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Week 9.2 Lighthouse performance report on Core Web Vitals and Critical Rendering Path improvements.">
+  <title>Performance audit | Week 9.2</title>
+  <link rel="stylesheet" href="../week-course.css">
+</head>
+<body>
+  <main class="assignment-shell">
+    <nav class="assignment-topbar" aria-label="Course navigation">
+      <a class="assignment-brand" href="../index.html">WEB PROGRAMMING</a>
+      <a class="assignment-back" href="index.html">← Week 9.2 reports</a>
+    </nav>
+    <header class="assignment-hero">
+      <div>
+        <p class="assignment-eyebrow">Week 09 · Homework 02 · Performance</p>
+        <h1>Make the first view <em>feel faster.</em></h1>
+        <p class="assignment-lede">A Lighthouse performance review of RecipePlan, examining mobile and desktop baselines, applying targeted Core Web Vitals improvements, and reflecting on the Critical Rendering Path.</p>
+      </div>
+      <aside class="assignment-index" aria-label="Report scope">
+        <strong>05</strong>
+        <span>performance improvements</span>
+      </aside>
+    </header>
+    <section class="assignment-panel" aria-labelledby="method-title">
+      <p class="assignment-eyebrow">Baseline & method</p>
+      <h2 id="method-title">Measure before tuning</h2>
+      <p>Run Lighthouse in mobile and desktop modes before changing code. Record the environment, page tested, performance metrics, and opportunities so that post-change measurements are comparable.</p>
+      <div class="assignment-callout">
+        <p><strong>Reporting note:</strong> Lighthouse values vary by device, network, browser, and deployment. This report describes the optimization work and measurement approach without inventing score values; record the actual audit results from the tested build alongside your submission.</p>
+      </div>
+    </section>
+    <section class="assignment-panel" aria-labelledby="optimizations-title">
+      <p class="assignment-eyebrow">Five applied improvements</p>
+      <h2 id="optimizations-title">Reduce bytes and unblock rendering</h2>
+      <div class="assignment-grid">
+        <article class="assignment-card">
+          <span class="card-index">01 · Images</span>
+          <h3>Serve the right image</h3>
+          <p>Use modern formats where supported, responsive source candidates, and explicit dimensions to reduce transfer size and layout shift.</p>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">02 · Loading priority</span>
+          <h3>Defer offscreen media</h3>
+          <p>Lazy-load below-the-fold images while keeping the likely Largest Contentful Paint image eager and appropriately prioritized.</p>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">03 · JavaScript</span>
+          <h3>Unblock the parser</h3>
+          <p>Use <code>defer</code> for scripts that need document parsing to finish; reserve <code>async</code> for independent scripts.</p>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">04 · Payload</span>
+          <h3>Ship less code</h3>
+          <p>Minify production CSS and JavaScript, and remove code that the page does not use.</p>
+        </article>
+        <article class="assignment-card">
+          <span class="card-index">05 · Repeat visits</span>
+          <h3>Cache versioned assets</h3>
+          <p>Apply long-lived immutable caching to fingerprinted static assets, with an appropriate revalidation policy for HTML.</p>
+        </article>
+      </div>
+    </section>
+    <section class="assignment-panel" aria-labelledby="code-title">
+      <p class="assignment-eyebrow">Before & after · script loading</p>
+      <h2 id="code-title">Let HTML parsing finish first</h2>
+      <pre class="assignment-code"><code>&lt;!-- Before: parsing pauses while the script downloads and runs --&gt;
+&lt;script src="app.js"&gt;&lt;/script&gt;
+
+&lt;!-- After: download in parallel, execute after parsing --&gt;
+&lt;script src="app.js" defer&gt;&lt;/script&gt;</code></pre>
+    </section>
+    <section class="assignment-panel" aria-labelledby="reflection-title">
+      <p class="assignment-eyebrow">Critical Rendering Path reflection</p>
+      <h2 id="reflection-title">Prioritize what a visitor sees first</h2>
+      <p>The browser must fetch and process the resources needed to render the first view. Large images, render-blocking CSS, and synchronous scripts can delay that work. Prioritizing critical content, reducing resource size, and deferring nonessential scripts shortens the path—while measurements confirm whether a change actually helped.</p>
+      <div class="assignment-grid">
+        <article class="assignment-card">
+          <h3>Capture</h3>
+          <p>Keep baseline and post-change mobile and desktop reports with the same test conditions.</p>
+        </article>
+        <article class="assignment-card">
+          <h3>Compare</h3>
+          <p>Review LCP, CLS, and INP alongside the Lighthouse opportunities and page behavior.</p>
+        </article>
+        <article class="assignment-card">
+          <h3>Explain</h3>
+          <p>Document each code change, its expected effect, and any trade-off discovered during verification.</p>
+        </article>
+      </div>
+    </section>
+    <p class="assignment-footer">Week 9.2 · Lighthouse performance audit and remediation</p>
+  </main>
+</body>
+</html>
