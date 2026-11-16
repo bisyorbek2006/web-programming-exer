@@ -175,6 +175,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .assignment-card a { font-weight: 750; }
 
+.assignment-exercise-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-top: 14px;
+  padding: 0 15px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: .88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.assignment-exercise-link:hover,
+.assignment-exercise-link:focus-visible {
+  background: #0b493b;
+  color: #fff;
+}
+
 .assignment-callout {
   display: flex;
   align-items: flex-start;
