@@ -286,6 +286,36 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   text-align: center;
 }
 
+.assignment-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.assignment-evidence {
+  min-width: 0;
+  margin: 18px 0 0;
+}
+
+.assignment-evidence-grid .assignment-evidence {
+  margin-top: 0;
+}
+
+.assignment-evidence img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.assignment-evidence figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: .84rem;
+}
+
 @media (max-width: 720px) {
   .assignment-topbar { margin-bottom: 34px; }
   .assignment-hero { grid-template-columns: 1fr; gap: 20px; }
