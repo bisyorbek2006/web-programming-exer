@@ -252,10 +252,26 @@
         flex-wrap: wrap;
       }
     }
+
+    .skip-link {
+      position: absolute;
+      top: -4rem;
+      left: 20px;
+      z-index: 10;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--text-main);
+      color: var(--bg-body);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .skip-link:focus-visible { top: 16px; }
   </style>
 </head>
 <body>
-  <main>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" tabindex="-1">
     <div class="topbar">
       <a href="../index.html" class="back-link">Week 9.1</a>
       <span class="badge">Exercise 1</span>

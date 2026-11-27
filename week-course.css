@@ -32,6 +32,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   outline-offset: 3px;
 }
 
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: 20px;
+  z-index: 10;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible { top: 16px; }
+
 .assignment-shell {
   width: min(1050px, calc(100% - 36px));
   margin: 0 auto;
