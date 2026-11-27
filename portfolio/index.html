@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bisyorbek's web development portfolio, featuring projects from weekly programming exercises.">
+  <meta name="theme-color" content="#f5f3ed">
+  <title>Bisyorbek | Web Developer Portfolio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f3ed;
+      --surface: #fffefa;
+      --ink: #1d2924;
+      --muted: #62706a;
+      --line: #dedfd6;
+      --green: #245c48;
+      --green-soft: #e6eee7;
+      --orange: #d5865b;
+      --shadow: 0 18px 48px rgb(34 53 43 / 8%);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 85% 4%, rgb(213 134 91 / 12%), transparent 25rem),
+        var(--paper);
+      color: var(--ink);
+      font: 16px/1.65 "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+
+    a { color: var(--green); text-underline-offset: 4px; }
+    a:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+    .shell { width: min(1050px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 0;
+    }
+    .brand {
+      color: var(--ink);
+      font-size: .82rem;
+      font-weight: 850;
+      letter-spacing: .13em;
+      text-decoration: none;
+    }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    .topbar nav a { color: var(--muted); font-size: .88rem; font-weight: 700; text-decoration: none; }
+    .topbar nav a:hover { color: var(--green); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 230px;
+      align-items: center;
+      gap: 40px;
+      min-height: 390px;
+      padding: clamp(30px, 7vw, 72px);
+      border-radius: 28px;
+      background: var(--green);
+      color: #fffefa;
+      box-shadow: var(--shadow);
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .hero .eyebrow { color: #d4e4d8; }
+    h1 {
+      max-width: 700px;
+      margin: 0;
+      font: 500 clamp(3rem, 8vw, 6rem)/.98 Georgia, "Times New Roman", serif;
+      letter-spacing: -.06em;
+    }
+    h1 span { color: #f0bc91; font-style: italic; }
+    .intro { max-width: 58ch; margin: 20px 0 26px; color: #e2ece4; font-size: 1.05rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 17px;
+      border-radius: 9px;
+      background: #fffefa;
+      color: var(--green);
+      font-size: .88rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .button:hover { background: #f0bc91; color: var(--ink); }
+    .github-link { color: #fffefa; font-size: .88rem; font-weight: 750; }
+    .github-link:hover { color: #f0bc91; }
+    .monogram {
+      display: grid;
+      place-items: center;
+      width: 190px;
+      aspect-ratio: 1;
+      justify-self: center;
+      border: 1px solid rgb(255 255 255 / 27%);
+      border-radius: 50%;
+      background: rgb(255 255 255 / 8%);
+      color: #f0bc91;
+      font: 500 5rem/1 Georgia, "Times New Roman", serif;
+      letter-spacing: -.08em;
+    }
+
+    section { scroll-margin-top: 24px; }
+    .about {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 36px;
+      align-items: start;
+      padding: 72px 0 58px;
+      border-bottom: 1px solid var(--line);
+    }
+    .about h2, .projects-heading h2 {
+      margin: 0;
+      font: 500 clamp(2rem, 4vw, 3rem)/1.08 Georgia, "Times New Roman", serif;
+      letter-spacing: -.04em;
+    }
+    .about-copy { max-width: 64ch; margin: 0; color: var(--muted); }
+    .about-copy strong { color: var(--ink); }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 22px;
+    }
+    .skill {
+      padding: 6px 11px;
+      border: 1px solid #d5ded5;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: #365b48;
+      font-size: .77rem;
+      font-weight: 750;
+    }
+
+    .projects { padding: 60px 0 72px; }
+    .projects-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .projects-heading > p { max-width: 42ch; margin: 0; color: var(--muted); font-size: .92rem; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .project {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: var(--surface);
+      box-shadow: 0 8px 26px rgb(34 53 43 / 4%);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+    .project:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .project-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .week-tag {
+      color: var(--green);
+      font-size: .7rem;
+      font-weight: 850;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .project-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 1.2rem;
+    }
+    .project h3 { margin: 18px 0 4px; font: 500 1.55rem/1.2 Georgia, "Times New Roman", serif; }
+    .project > p { margin: 5px 0 18px; color: var(--muted); font-size: .91rem; }
+    .project-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: auto; }
+    .project-links a { font-size: .83rem; font-weight: 800; }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 0 30px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .8rem;
+    }
+    .footer a { font-weight: 750; }
+
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; gap: 28px; }
+      .monogram { width: 120px; justify-self: start; font-size: 3.5rem; }
+      .about { grid-template-columns: 1fr; gap: 16px; padding: 52px 0 44px; }
+      .projects-heading { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 520px) {
+      .shell { width: min(100% - 24px, 1050px); }
+      .topbar { align-items: flex-start; flex-direction: column; gap: 13px; }
+      .topbar nav { gap: 16px; }
+      .hero { padding: 30px 22px; border-radius: 20px; }
+      .project-grid { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#home">BISYORBEK · PORTFOLIO</a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="https://github.com/bisyorbek2006" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow">Web programming · Learning by building</p>
+          <h1 id="intro-title">Hello, I’m <span>Bisyorbek.</span></h1>
+          <p class="intro">I’m a web programming student exploring how thoughtful design and code come together. This portfolio collects projects and exercises I’ve built while learning the web.</p>
+          <div class="hero-actions">
+            <a class="button" href="#projects">Explore my projects <span aria-hidden="true">&nbsp;↓</span></a>
+            <a class="github-link" href="https://github.com/bisyorbek2006" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a>
+          </div>
+        </div>
+        <div class="monogram" aria-hidden="true">B.</div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div>
+          <p class="eyebrow">A little about me</p>
+          <h2 id="about-title">Curious by nature.<br>Building for the web.</h2>
+        </div>
+        <div>
+          <p class="about-copy">I’m learning to make the web <strong>useful, accessible, and enjoyable</strong>. My coursework has taken me from semantic HTML and responsive CSS to JavaScript interactions, forms, and accessibility. These projects are snapshots of that journey—and a foundation I’ll keep building on.</p>
+          <div class="skills" aria-label="Skills explored">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">Responsive design</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Accessibility</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="projects-heading">
+          <div>
+            <p class="eyebrow">Selected coursework</p>
+            <h2 id="projects-title">A few things I’ve built.</h2>
+          </div>
+          <p>Small weekly exercises that helped me practice real interface patterns and make the ideas stick.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-top">
+              <span class="week-tag">Week 7 · APIs</span>
+              <span class="project-icon" aria-hidden="true">⌕</span>
+            </div>
+            <h3>Book Finder</h3>
+            <p>A book search experience using the Open Library catalog to explore titles, authors, and cover art.</p>
+            <div class="project-links">
+              <a href="../week7/samples/sample01.html">Try the project →</a>
+              <a href="https://github.com/bisyorbek2006/web-programming-exer/tree/main/week7">View source ↗</a>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-top">
+              <span class="week-tag">Week 4 · JavaScript</span>
+              <span class="project-icon" aria-hidden="true">✓</span>
+            </div>
+            <h3>Interactive To-Do List</h3>
+            <p>Add and remove tasks in a simple list, with keyboard support for quickly adding items.</p>
+            <div class="project-links">
+              <a href="../week4_2/exercises/03-interactive-to-do-list.html">Try the project →</a>
+              <a href="https://github.com/bisyorbek2006/web-programming-exer/tree/main/week4_2">View source ↗</a>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-top">
+              <span class="week-tag">Week 8 · Forms</span>
+              <span class="project-icon" aria-hidden="true">✳</span>
+            </div>
+            <h3>Friendly Signup Form</h3>
+            <p>A registration form with field-by-field validation and clear feedback to help people fix errors.</p>
+            <div class="project-links">
+              <a href="../week8_2/index.html">Try the project →</a>
+              <a href="https://github.com/bisyorbek2006/web-programming-exer/tree/main/week8_2">View source ↗</a>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-top">
+              <span class="week-tag">Week 9 · Accessibility</span>
+              <span class="project-icon" aria-hidden="true">↵</span>
+            </div>
+            <h3>Keyboard Access Lab</h3>
+            <p>An accessibility exercise focused on keyboard-friendly controls, visible focus, and clear action names.</p>
+            <div class="project-links">
+              <a href="../week9_1/labs/01-keyboard-access.html">Try the exercise →</a>
+              <a href="https://github.com/bisyorbek2006/web-programming-exer/tree/main/week9_1/labs">View source ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Made by Bisyorbek · Learning one project at a time.</span>
+      <a href="../index.html">Back to coursework</a>
+    </footer>
+  </div>
+</body>
+</html>

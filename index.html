@@ -53,6 +53,24 @@
       font-size: 1.1rem;
     }
 
+    .portfolio-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      margin: -16px 0 28px;
+      padding: 0 15px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font: 700 0.88rem/1.4 Arial, sans-serif;
+      text-decoration: none;
+    }
+
+    .portfolio-link:hover, .portfolio-link:focus-visible {
+      background: #0b493b;
+      color: #fff;
+    }
+
     .weeks {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
@@ -99,6 +117,7 @@
     <p class="eyebrow">Programming coursework</p>
     <h1>HTML Fundamentals</h1>
     <p class="intro">Browse each week’s lessons, examples, and exercises.</p>
+    <a class="portfolio-link" href="portfolio/index.html">Visit my portfolio <span aria-hidden="true">&nbsp;→</span></a>
 
     <nav class="weeks" aria-label="Course weeks">
       <a class="week" href="week2_1/index.html">
